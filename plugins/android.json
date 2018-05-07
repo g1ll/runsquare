@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.echoes.canvastest"
+    },
+    "cordova.custom.plugins.exitapp": {
+      "PACKAGE_NAME": "com.echoes.canvastest"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.echoes.canvastest"
+    }
+  },
+  "dependent_plugins": {}
+}

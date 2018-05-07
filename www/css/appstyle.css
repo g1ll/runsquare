@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'simpsons';
+    src: url('../font/simpsonfont.ttf');
+}
+html,body{
+    margin:0;
+    padding:0;
+}
+div{
+    font-family: 'simpsons';
+    font-size: 32px;
+    width: 100%;
+    box-sizing: border-box;  
+    text-align: center;
+}

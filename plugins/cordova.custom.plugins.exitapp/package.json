@@ -1,0 +1,83 @@
+{
+  "_args": [
+    [
+      "cordova-plugin-exitapp",
+      "/home/echoes/NetBeansProjects/canvastest"
+    ]
+  ],
+  "_from": "cordova-plugin-exitapp@latest",
+  "_id": "cordova-plugin-exitapp@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-exitapp",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "email": "pugachevsoul@gmail.com",
+    "name": "rakesh-walisheter"
+  },
+  "_npmVersion": "2.11.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-exitapp",
+    "raw": "cordova-plugin-exitapp",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-exitapp/-/cordova-plugin-exitapp-1.0.0.tgz",
+  "_shasum": "21252914ec59f9044e33d124d35d6204b857b349",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-exitapp",
+  "_where": "/home/echoes/NetBeansProjects/canvastest",
+  "author": {
+    "name": "Rakesh Walisheter"
+  },
+  "bugs": {
+    "url": "https://github.com/rakesh-walisheter/cordova-plugin-exitapp/issues"
+  },
+  "cordova": {
+    "id": "cordova.custom.plugins.exitapp",
+    "platforms": [
+      "android",
+      "wp8"
+    ]
+  },
+  "dependencies": {},
+  "description": "Implements navigator.app.exitApp on WP8, Android",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "21252914ec59f9044e33d124d35d6204b857b349",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-exitapp/-/cordova-plugin-exitapp-1.0.0.tgz"
+  },
+  "gitHead": "4b4c50c608f3c9c78660b942399e50417eefcfcc",
+  "homepage": "https://github.com/rakesh-walisheter/cordova-plugin-exitapp#readme",
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-wp8",
+    "ecosystem:cordova",
+    "exit",
+    "terminate"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "rakesh-walisheter",
+      "email": "pugachevsoul@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-exitapp",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakesh-walisheter/cordova-plugin-exitapp.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}
