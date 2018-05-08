@@ -20,7 +20,7 @@ var app = {
 
     start: function () {
         $(document).unbind('ready');
-        if (!(typeof StatusBar === "undefined")) {
+        if (!(typeof StatusBar === "undefined")) {//for mobile
             StatusBar.hide();
         }
 
@@ -37,17 +37,13 @@ var app = {
         for (var i = 0; i < this.enemys.length; i++) {
             this.enemys[i].x = -1000 * Math.random();
             this.enemys[i].y = -1000 * Math.random();
-            this.enemys[i].speed = this.hero.speed * (0.5*Math.random());
+            this.enemys[i].speed = this.hero.speed * (0.5 * Math.random());
         }
 
         this.hero.x = this.canvas.width / 2;
         this.hero.y = this.canvas.height / 2;
 
-        this.drawnBackGround();
-
         this.setControls();
-
-        this.mainLoop();
     },
 
     mainLoop: function () {
@@ -67,12 +63,14 @@ var app = {
             for (var i = 0; i < app.enemys.length; i++) {
                 if (app.enemys[i].x === app.hero.x && app.enemys[i].y === app.hero.y) {
                     app.hero.dead = true;
+                    i=app.enemys.length;
                 }
             }
 
             if (!app.hero.dead) {
                 window.requestAnimationFrame(app.mainLoop);
             } else {
+                app.audio.play();
                 app.openClose();
             }
         }, 1000 / this.fps);
@@ -89,10 +87,11 @@ var app = {
     },
 
     openClose: function () {
-        app.audio.play();
         if ($('canvas').css('display') === 'none') {
+            $('div').unbind('click');
+            app.audio.play();
             $('div').fadeOut('slow', function () {
-                $('canvas').fadeIn();
+                $('canvas').fadeIn('fast', app.mainLoop);
                 $('div').text('Game Over!!!');
             });
         } else {
@@ -108,20 +107,22 @@ var app = {
     setControls: function () {
         $(document).keydown(function (e) {
             app.key = e.which;
+            app.touch = null;
         });
 
         $(document).keyup(function (e) {
             app.key = 0;
-
+            app.touch = null;
         });
 
         $('canvas').on("touchstart", function (e) {
             e.preventDefault();
             app.touch = e.originalEvent.changedTouches[0];
         });
-        
+
         $('canvas').on("click", function (e) {
             e.preventDefault();
+            app.touch = e;
             app.touch.pageX = e.clientX;
             app.touch.pageY = e.clientY;
         });
@@ -131,7 +132,7 @@ var app = {
         if (navigator.app) {
             navigator.app.exitApp();
         } else {
-            window.open(location, '_self').close();
+            window.open(location, '_self').close();//doen't close, just refresh. 
         }
     }
 };

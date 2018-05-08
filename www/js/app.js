@@ -70,6 +70,7 @@ var app = {
             if (!app.hero.dead) {
                 window.requestAnimationFrame(app.mainLoop);
             } else {
+                app.audio.play();
                 app.openClose();
             }
         }, 1000 / this.fps);
@@ -86,8 +87,9 @@ var app = {
     },
 
     openClose: function () {
-        app.audio.play();
         if ($('canvas').css('display') === 'none') {
+            $('div').unbind('click');
+            app.audio.play();
             $('div').fadeOut('slow', function () {
                 $('canvas').fadeIn('fast', app.mainLoop);
                 $('div').text('Game Over!!!');
@@ -97,7 +99,7 @@ var app = {
             $('div').css('color', 'red');
             $('div').css('font-size', '50px');
             $('div').fadeIn('slow', setTimeout(function () {
-                app.exit()
+                app.exit();
             }, 3000));
         }
     },
